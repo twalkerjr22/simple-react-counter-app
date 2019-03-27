@@ -5,6 +5,7 @@ import Counters from "./components/counters";
 
 class App extends Component {
 
+  // Our state. Lifted into the main App class so states are managed by the main parent. 
   state = {
     counters: [
       { id: 1, value: 0 },
@@ -14,11 +15,13 @@ class App extends Component {
     ]
   };
 
+  // Handler for deleting a counter
   handleDelete = counterId => {
     const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
 
+  // Handler for incrementing the counter
   handleIncrement = counter => {
     // using spread operator to clone the counters from the state in an array
     const counters = [...this.state.counters];
@@ -32,12 +35,15 @@ class App extends Component {
   };
 
   handleReset = () => {
-    const counters = this.state.counters.map(c => {
-      c.value = 0;
-      return c;
-    });
+    this.setState({
+      counters: [
+        { id: 1, value: 0 },
+        { id: 2, value: 0 },
+        { id: 3, value: 0 },
+        { id: 4, value: 0 }
+      ]});
 
-    this.setState({ counters });
+    //this.setState({ counters });
   };
 
   render() {

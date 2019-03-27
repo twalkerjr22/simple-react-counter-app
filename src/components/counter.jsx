@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import { brotliDecompress } from "zlib";
 
 class Counter extends Component {
-  // State managing the state of this Counter Object
 
   // Styles for the html elements
   styles = {
@@ -26,12 +25,8 @@ class Counter extends Component {
     );
   }
 
-  // HANDLERS
-  // Function to handle the incremement button
-  // We update the state of this components value to the new incremented value
-
   render() {
-    console.log("props", this.props);
+   
     return (
       <div>
         <h4>Counter #{this.props.id}</h4>
@@ -52,15 +47,15 @@ class Counter extends Component {
     );
   }
 
+  // Function to show a different badge icon when the counter is zero
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    // if the state value is 0 then we use the warning, otherwise we use the primary CSS class
     classes += this.props.value === 0 ? "warning" : "primary";
     return classes;
   }
 
+  // If the counter is 0, we use the words Zero
   formatvalue() {
-    // taking the object called value from the state and storing it.
     const { value } = this.props.counter;
     return value === 0 ? "zero" : value;
   }

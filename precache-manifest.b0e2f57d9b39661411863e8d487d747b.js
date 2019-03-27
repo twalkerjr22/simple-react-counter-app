@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/simple-react-counter-app/static/css/2.64b6602d.chunk.css"
   },
   {
-    "revision": "4f67b2b0f11b2d8a32447e7d7887bcd1",
+    "revision": "84080f6416d832cb9a51c9fabea63b96",
     "url": "/simple-react-counter-app/index.html"
   }
 ];
